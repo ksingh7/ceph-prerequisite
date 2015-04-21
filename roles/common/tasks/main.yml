@@ -1,0 +1,83 @@
+---
+#- name: Setting up SSH keys for the root user
+  #authorized_keys: user=root key="{{ lookup('file', '{{ ssh_key_absolute_path }}') }}"  state=present
+  #authorized_keys: user=root key="{{ lookup('file', '/Users/ksingh/.ssh/id_rsa.pub') }}"  state=present
+#  authorized_keys: user=root key={{ key }} state=present
+
+- name: Updating Hosts file
+  template: src=templates/{{ project }}.hosts dest=/etc/hosts mode=0644
+  ignore_errors: True
+
+- name: Installing HP Array Controller Utility ( hpacucli )
+  yum: name=hpacucli state=latest
+
+- name: Configuring mellanox drivers 
+  template: src=templates/mlx4_en.modules dest=/etc/sysconfig/modules/mlx4_en.modules mode=0744
+
+- name: Installing NTP packages
+  yum: name=ntp state=latest
+  when: ntp
+
+- name: Removing default NTP serers 
+  lineinfile: dest=/etc/ntp.conf regexp=^"server " state=absent
+  when: ntp
+
+- name: Adding ntp1.funet.fi
+  lineinfile: dest=/etc/ntp.conf line="server ntp1.funet.fi" state=present
+  when: ntp
+
+- name: Adding ntp2.funet.fi 
+  lineinfile: dest=/etc/ntp.conf line="server ntp2.funet.fi" state=present
+  when: ntp
+
+- name: Setting up ntpdate
+  command: ntpdate ntp1.funet.fi
+  when: ntp
+
+- name: Restarting NTP services 
+  service: name=ntpd state=restarted enabled=yes
+  when: ntp
+
+- name: Installing elrepo kernel
+  yum : state=present name=http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
+
+- name: Updating yum cache
+  command: yum clean all
+
+- name: Installing elrepo long term kernel release
+  yum: name={{ elrepo_kernel_release }} state=latest enablerepo=elrepo-kernel
+  register: kernel_upgrade
+
+- name: Installing elrepo long term kernel release 
+  yum: name={{ elrepo_kernel_release }} state=present
+  register: kernel_upgrade
+
+- name: Updating grub to boot next time from the new kernel
+  lineinfile: dest=/boot/grub/grub.conf regexp=^default= line=default=0 backup=yes
+  when: kernel_upgrade.changed
+
+- name: Rebooting Server 
+  command: shutdown -r now "Rebooted by Ansible script"
+  async: 0
+  poll: 0
+  ignore_errors: true
+  when: kernel_upgrade.changed
+
+- name: Wait for server to restart
+  local_action:
+    module: wait_for
+      host={{ inventory_hostname }}
+      port=22
+      delay=3
+      timeout=250
+  ignore_errors: true
+  when: kernel_upgrade.changed
+
+
+- name: Updating system packages
+  action: command yum update -y
+  when: yum_update
+
+- name: Disabling firewall temperiorly
+  service: name=iptables state=stopped enabled=no
+

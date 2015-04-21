@@ -1,0 +1,25 @@
+[all:vars]
+# Set the correct environment, valid options are : devel,test,prod,home,cloud-vm
+env=home
+
+# Select the primary interface that should be used by monitor nodes
+first_nw_interface=eth3
+
+# Set 'true' if you need bonding to be configured , else set 'false' 
+bonding=false
+
+# Set the second interface , that will be used for bonding. Make sure bonding should be set to 'true'
+second_nw_interface=
+
+# Set SSh keys
+ssh_key_absolute_path=/Users/ksingh/.ssh/id_rsa.pub
+key="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH9rwvn8X4zia27aHQ/HcQwBjDHd5a66DxYXptwrmsTps7w/jVvTcgA5jAUtQYCjy2o2hhwcft4JM1ypn6BeRTfZ77v75S7/aOGI5RxXYrGaTE7rYxRkrLj3LCoyv/x4aIxAXKH8yaAOtUfyzlNBFFkUVoZ3nvcwcPK2wLvzu9Zcv7kmBiaZD7PHCRYNEq8g2QLfGAKaOjW336MrTLov/uRI+6wk0uJgHsyLUfhKtxU2EKUMd5qzBvIrD/f3Pnn/WBNyvEzDiDbt1Z7z7PJJ1pVphgePyI6D6GOxD9boeU4uq8MecPGl64SI2giHQy6jncho3qmkL0K+ALH5Swa2Ir ksingh@teeri.csc.fi"
+
+[common]
+ceph-node1
+
+[hpdl380]
+
+[hpsl4540]
+
+[test]

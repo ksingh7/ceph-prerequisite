@@ -1,0 +1,21 @@
+[all:vars]
+# Set the correct environment, valid options are : devel,test,prod,home,cloud-vm
+env=cloud-vm
+
+# Select the primary interface that should be used by monitor nodes
+first_nw_interface=eth0
+
+# Set 'true' if you need bonding to be configured , else set 'false' 
+bonding=false
+
+# Set the second interface , that will be used for bonding. Make sure bonding should be set to 'true'
+second_nw_interface=
+
+[common]
+ceph-pouta-node1
+
+[hpdl380]
+
+[hpsl4540]
+
+[test]

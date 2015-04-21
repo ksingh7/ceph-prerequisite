@@ -1,0 +1,14 @@
+---
+# This file contains vailables that can be uses across different environments
+
+elrepo_kernel_release: "kernel-lt.x86_64"
+
+NET_BOND_INTERFACE: "bond0"
+NET_BONDING_OPTS: "mode=1 miimon=100"
+NET_NETMASK: "255.255.255.0"
+NET_BOOTPROTO: "static"
+NET_ONBOOT: "yes"
+NET_MASTER: "bond0"
+NET_SLAVE: "yes"
+NET_USERCTL: "no"
+NET_MTU: "9000"

@@ -1,0 +1,36 @@
+---
+- hosts: common 
+  gather_facts: yes 
+  user: root
+  roles: 
+  - common
+
+- hosts: hardware_type_1 
+  user: root 
+  roles:
+    - role: network_interface 
+      when: network_configuration and hardware_type_1
+      network_bond_interfaces:
+        - device: bond0
+          address: "{{ ip_address }}" 
+          netmask: 255.255.255.0
+          bootproto: static
+          onboot: yes
+          bond_mode: active-backup
+          bond_miimon: 100
+          bond_slaves: [eth4, eth5]
+
+- hosts: hardware_type_2
+  user: root
+  roles:
+    - role: network_interface
+      when: network_configuration and hardware_type_2 
+      network_bond_interfaces:
+        - device: bond0
+          address: "{{ ip_address }}"
+          netmask: 255.255.255.0
+          bootproto: static
+          onboot: yes
+          bond_mode: active-backup
+          bond_miimon: 100
+          bond_slaves: [eth0, eth1]

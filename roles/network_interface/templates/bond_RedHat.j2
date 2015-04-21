@@ -1,0 +1,27 @@
+
+{% if item.bootproto == 'static' %}
+DEVICE={{ item.device }}
+USERCTL=no
+BOOTPROTO=static
+ONBOOT=yes
+{% if item.address is defined %}
+IPADDR={{ item.address }}
+{% endif %}
+{% if item.netmask is defined %}
+NETMASK={{ item.netmask }}
+{% endif %}
+{% if item.gateway is defined %}
+GATEWAY={{ item.gateway }}
+{% endif %}
+BONDING_OPTS="mode={{ item.bond_mode }} miimon={{ item.bond_miimon|default(100) }} "
+MTU=9000
+{% endif %}
+
+{% if item.bootproto == 'dhcp' %}
+DEVICE={{ item.device }}
+BONDING_OPTS="mode={{ item.bond_mode }} miimon={{ item.bond_miimon|default(100) }} "
+USERCTL=no
+ONBOOT={{ item.onboot|default("yes") }}
+BOOTPROTO=dhcp
+MTU=9000
+{% endif %}
