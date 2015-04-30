@@ -1,9 +1,4 @@
 ---
-#- name: Setting up SSH keys for the root user
-  #authorized_keys: user=root key="{{ lookup('file', '{{ ssh_key_absolute_path }}') }}"  state=present
-  #authorized_keys: user=root key="{{ lookup('file', '/Users/ksingh/.ssh/id_rsa.pub') }}"  state=present
-#  authorized_keys: user=root key={{ key }} state=present
-
 - name: Updating Hosts file
   template: src=templates/{{ project }}.hosts dest=/etc/hosts mode=0644
   ignore_errors: True
