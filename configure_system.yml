@@ -1,7 +1,9 @@
 ---
+#TR
 - hosts: common 
   gather_facts: yes 
   user: root
+  tags: common
   roles: 
   - common
 
@@ -33,4 +35,5 @@
           onboot: yes
           bond_mode: active-backup
           bond_miimon: 100
-          bond_slaves: [eth0, eth1]
+         #bond_slaves: [eth0, eth1] # For EL6
+          bond_slaves: [eth2, eth3]

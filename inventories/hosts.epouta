@@ -9,34 +9,34 @@ ntp=true
 network_configuration=true
 
 # To perform yum update -y , valid options are 'true' or 'false'
-yum_update=true
+yum_update=false
 
 # If you have different type of server hardware, segregate them with these variables and define hosts for below.
 
-hardware_type_1=true
+hardware_type_1=false
 
 hardware_type_2=true
 
 [common]
-#storage0101
-#storage0102
-#storage0103
-#storage0104
-#storage0105
-#storage0106
-#storage0107
-#storage0108
-#storage0109
-#storage0110
-#storage0111
-#storage0112
-#storage0113
-#storage0114
-#storage0115
-#storage0201
+storage0101
+storage0102
+storage0103
+storage0104
+storage0105
+storage0106
+storage0107
+storage0108
+storage0109
+storage0110
+storage0111
+storage0112
+storage0113
+storage0114
+storage0115
+storage0201
 storage0202
-#storage0203
-#storage0204
+storage0203
+storage0204
 
 
 [hardware_type_1]
@@ -60,9 +60,11 @@ storage0202
 #storage0201
 #storage0202
 #storage0203
-#storage0204
+storage0204
 
 [test]
-storage0112
-storage0203
-storage0204
+#storage0111
+#storage0112
+#storage0113
+#storage0114
+#storage0115

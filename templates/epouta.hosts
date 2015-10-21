@@ -27,25 +27,25 @@
 
 ###### Ceph Storage nodes Admin ( Management ) Network ###
 
-86.50.50.25     storage0101 storage0101.epouta.csc.fi
-86.50.50.26     storage0102 storage0102.epouta.csc.fi
-86.50.50.27     storage0103 storage0103.epouta.csc.fi
-86.50.50.28     storage0104 storage0104.epouta.csc.fi
-86.50.50.29     storage0105 storage0105.epouta.csc.fi
-86.50.50.30     storage0106 storage0106.epouta.csc.fi
-86.50.50.31     storage0107 storage0107.epouta.csc.fi
-86.50.50.32     storage0108 storage0108.epouta.csc.fi
-86.50.50.33     storage0109 storage0109.epouta.csc.fi
-86.50.50.34     storage0110 storage0110.epouta.csc.fi
-86.50.50.35     storage0111 storage0111.epouta.csc.fi
-86.50.50.36     storage0112 storage0112.epouta.csc.fi
-86.50.50.37     storage0113 storage0113.epouta.csc.fi
-86.50.50.38     storage0114 storage0114.epouta.csc.fi
-86.50.50.39     storage0115 storage0115.epouta.csc.fi
-86.50.50.40     storage0201 storage0201.epouta.csc.fi
-86.50.50.41     storage0202 storage0202.epouta.csc.fi
-86.50.50.42     storage0203 storage0203.epouta.csc.fi
-86.50.50.43     storage0204 storage0204.epouta.csc.fi
+86.50.50.25     storage0101.epouta.csc.fi
+86.50.50.26     storage0102.epouta.csc.fi
+86.50.50.27     storage0103.epouta.csc.fi
+86.50.50.28     storage0104.epouta.csc.fi
+86.50.50.29     storage0105.epouta.csc.fi
+86.50.50.30     storage0106.epouta.csc.fi
+86.50.50.31     storage0107.epouta.csc.fi
+86.50.50.32     storage0108.epouta.csc.fi
+86.50.50.33     storage0109.epouta.csc.fi
+86.50.50.34     storage0110.epouta.csc.fi
+86.50.50.35     storage0111.epouta.csc.fi
+86.50.50.36     storage0112.epouta.csc.fi
+86.50.50.37     storage0113.epouta.csc.fi
+86.50.50.38     storage0114.epouta.csc.fi
+86.50.50.39     storage0115.epouta.csc.fi
+86.50.50.40     storage0201.epouta.csc.fi
+86.50.50.41     storage0202.epouta.csc.fi
+86.50.50.42     storage0203.epouta.csc.fi
+86.50.50.43     storage0204.epouta.csc.fi
 
 ####### Ceph Storage nodes Cluster / Data Network ########
 

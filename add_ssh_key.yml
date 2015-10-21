@@ -1,0 +1,7 @@
+---
+- hosts: common 
+  gather_facts: no 
+  user: root
+  tags: add_ssh_key 
+  roles: 
+  - add_ssh_key 
