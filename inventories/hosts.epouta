@@ -1,21 +1,20 @@
 [all:vars]
 # Do Not Change This
 project=epouta
-
-# To configure NTP , valid options are 'true' or 'false'
-ntp=true
+bonded_interface=bond0
 
 # To configure network interfaces ,valid options are 'true' or 'false'
-network_configuration=true
+configure_ceph_network=true
 
-# To perform yum update -y , valid options are 'true' or 'false'
-yum_update=false
+# If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
-# If you have different type of server hardware, segregate them with these variables and define hosts for below.
+hardware_type_HPDL380=false
 
-hardware_type_1=false
+hardware_type_HPSL4540=true
 
-hardware_type_2=true
+# VLAN Tags
+cluster_network_vlan_tag=999
+public_network_vlan_tag=1000
 
 [common]
 storage0101
@@ -39,7 +38,7 @@ storage0203
 storage0204
 
 
-[hardware_type_1]
+[hardware_type_HPDL380]
 #storage0101
 #storage0102
 #storage0103
@@ -56,7 +55,7 @@ storage0204
 #storage0114
 #storage0115 
 
-[hardware_type_2]
+[hardware_type_HPSL4540]
 #storage0201
 #storage0202
 #storage0203

@@ -1,0 +1,19 @@
+---
+- hosts: hardware_type_HPSL4540
+  user: root
+  tags: cpouta-admin-network
+  roles:
+    - role: network_interface
+      when: configure_admin_network and hardware_type_HPSL4540 and project == "cpouta"
+      network_bond_interfaces:
+        - device: "{{ bonded_interface }}" 
+          bootproto: "static"
+          onboot: "yes"
+          nm_controlled: "no"
+          bond_mode: "active-backup"
+          bond_miimon: "500"
+          bond_slaves: [eno3, eth0]
+          address: "{{ admin_network_address }}"
+          netmask: "{{ admin_network_netmask }}"
+          gateway: "{{ admin_network_gateway }}"
+

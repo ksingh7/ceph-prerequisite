@@ -1,0 +1,15 @@
+---
+- hosts: hardware_type_HPSL4540
+  user: root
+  tags: cpouta-management-network
+  roles:
+    - role: network_interface
+      when: configure_management_network and hardware_type_HPSL4540 and project == "cpouta"
+      network_ether_interfaces:
+        - device: "{{ management_network_interface }}"
+          bootproto: "static"
+          onboot: "yes"
+          nm_controlled: "no"
+          address: "{{ management_network_address }}"
+          netmask: "{{ management_network_netmask }}"
+          gateway: "{{ management_network_gateway }}"

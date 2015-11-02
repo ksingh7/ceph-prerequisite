@@ -1,0 +1,4 @@
+2015-10-23 16:11:42,790 p=16450 u=ksingh |   
+2015-10-23 16:11:42,790 p=16450 u=ksingh |  /usr/local/bin/ansible-playbook configure_system.yml -i inventories/hosts.epouta --tags=network --list-hosts
+2015-10-23 16:11:42,790 p=16450 u=ksingh |   
+2015-10-23 16:11:42,791 p=16450 u=ksingh |  ERROR: the playbook: configure_system.yml could not be found

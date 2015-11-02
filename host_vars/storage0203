@@ -1,2 +1,10 @@
 ---
-ip_address: 10.100.1.203
+#ip_address: 10.100.1.203
+
+cluster_network_address: 10.22.0.203
+cluster_network_netmask: 255.255.0.0
+cluster_network_gateway: 10.22.0.254
+
+public_network_address: 10.100.1.203 
+public_network_netmask: 255.255.0.0
+public_network_gateway: 10.100.1.254

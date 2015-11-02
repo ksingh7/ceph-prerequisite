@@ -1,0 +1,17 @@
+---
+management_network_interface: eno1
+management_network_address: 10.20.20.104
+management_network_netmask: 255.255.0.0
+management_network_gateway: 10.20.20.254
+
+admin_network_address: 10.100.50.4 
+admin_network_netmask: 255.255.0.0
+admin_network_gateway: 10.100.0.1 
+
+cluster_network_address: 10.22.0.204
+cluster_network_netmask: 255.255.0.0
+cluster_network_gateway: 10.22.0.254
+
+public_network_address: 10.100.1.204 
+public_network_netmask: 255.255.0.0
+public_network_gateway: 10.100.1.254

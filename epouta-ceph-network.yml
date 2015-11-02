@@ -1,0 +1,34 @@
+---
+- hosts: hardware_type_HPSL4540
+  user: root
+  tags: epouta-ceph-network
+  roles:
+    - role: network_interface
+      when: configure_ceph_network and hardware_type_HPSL4540 and project == "epouta"
+      network_bond_interfaces:
+        - device: "{{ bonded_interface }}" 
+          bootproto: "static"
+          onboot: "yes"
+          nm_controlled: "no"
+          bond_mode: "active-backup"
+          bond_miimon: "500"
+          #bond_slaves: [eth0, eth1] # For epouta EL6 HPSL4540
+          #bond_slaves: [eth4, eth5] # For ePouta EL6 HPDL380
+          bond_slaves: [eth2, eth3]  # For ePouta EL7 
+          #bond_slaves: [eno3, eth0] # For ePouta EL7
+      network_vlan_interfaces:
+        - device: "{{ bonded_interface }}.{{ cluster_network_vlan_tag }}"
+          vlan: "yes"
+          bootproto: "static"
+          nm_controlled: "no"
+          address: "{{ cluster_network_address }}"
+          netmask: "{{ cluster_network_netmask }}"
+          gateway: "{{ cluster_network_gateway }}"
+        - device: "{{ bonded_interface }}.{{ public_network_vlan_tag }}"
+          vlan: "yes"
+          bootproto: "static"
+          nm_controlled: "no"
+          address: "{{ public_network_address }}"
+          netmask: "{{ public_network_netmask }}"
+          gateway: "{{ public_network_gateway }}"
+

@@ -4,6 +4,7 @@ DEVICE={{ item.device }}
 USERCTL=no
 BOOTPROTO=static
 ONBOOT=yes
+NM_CONTROLLED=no
 {% if item.address is defined %}
 IPADDR={{ item.address }}
 {% endif %}

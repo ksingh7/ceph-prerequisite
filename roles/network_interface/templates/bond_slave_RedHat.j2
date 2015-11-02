@@ -1,7 +1,8 @@
 DEVICE={{ item.1 }}
-BOOTPROTO=none
+BOOTPROTO=static
 MASTER={{ item.0.device }}
 ONBOOT=yes
+NM_CONTROLLED=no
 SLAVE=yes
 USERCTL=no
 MTU=9000

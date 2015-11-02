@@ -1,21 +1,37 @@
 [all:vars]
-# Set the correct environment, valid options are : devel,test,prod,home,cloud-vm
-env=cloud-vm
+# Do Not Change This
+project=cpouta
+bonded_interface=bond0
 
-# Select the primary interface that should be used by monitor nodes
-first_nw_interface=eth0
+# To configure network interfaces ,valid options are 'true' or 'false'
+configure_management_network=true
+configure_admin_network=true
+configure_ceph_network=true
 
-# Set 'true' if you need bonding to be configured , else set 'false' 
-bonding=false
+# If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
-# Set the second interface , that will be used for bonding. Make sure bonding should be set to 'true'
-second_nw_interface=
+hardware_type_HPSL4540=true
+
+# VLAN Tags
+cluster_network_vlan_tag=1001
+public_network_vlan_tag=1002
 
 [common]
-ceph-pouta-node1
+pouta-s01
+pouta-s02
+pouta-s03
+pouta-s04
 
-[hpdl380]
 
-[hpsl4540]
+[hardware_type_HPSL4540]
+#pouta-s01
+#pouta-s02
+#pouta-s03
+pouta-s04
+
 
 [test]
+pouta-s01
+pouta-s02
+pouta-s03
+pouta-s04
