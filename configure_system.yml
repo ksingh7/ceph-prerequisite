@@ -5,7 +5,6 @@
   roles: 
   - common
 
-- include: cpouta-management-network.yml
 - include: cpouta-admin-network.yml
 - include: cpouta-ceph-network.yml
 - include: epouta-ceph-network.yml

@@ -1,12 +1,12 @@
 ---
-admin_network_address: 10.100.50.4 
+admin_network_address: 10.100.50.3 
 admin_network_netmask: 255.255.0.0
 admin_network_gateway: 10.100.0.1 
 
-public_network_address: 10.101.50.4 
+public_network_address: 10.101.50.3 
 public_network_netmask: 255.255.255.0
 public_network_gateway: 10.101.50.254
 
-cluster_network_address: 10.102.50.4
+cluster_network_address: 10.102.50.3
 cluster_network_netmask: 255.255.255.0
 cluster_network_gateway: 10.102.50.254

@@ -2,10 +2,23 @@
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
 
-################ Pouta Ceph Storage Nodes ###################
+################ Ceph Storage Nodes Admin Network ###################
 
 10.100.50.1 pouta-s01.pouta.csc.fi pouta-s01 s01
 10.100.50.2 pouta-s02.pouta.csc.fi pouta-s02 s02
 10.100.50.3 pouta-s03.pouta.csc.fi pouta-s03 s03
 10.100.50.4 pouta-s04.pouta.csc.fi pouta-s04 s04
 
+################ Ceph Storage Nodes Cluster / Internal Network ###################
+
+10.102.50.1 pouta-s01-int
+10.102.50.2 pouta-s02-int
+10.102.50.3 pouta-s03-int
+10.102.50.4 pouta-s04-int
+
+################ Ceph Storage Nodes Public Network ###################
+
+10.101.50.1 pouta-s01-pub
+10.101.50.2 pouta-s02-pub
+10.101.50.3 pouta-s03-pub
+10.101.50.4 pouta-s04-pub

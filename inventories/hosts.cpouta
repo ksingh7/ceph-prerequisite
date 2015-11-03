@@ -4,7 +4,6 @@ project=cpouta
 bonded_interface=bond0
 
 # To configure network interfaces ,valid options are 'true' or 'false'
-configure_management_network=true
 configure_admin_network=true
 configure_ceph_network=true
 
@@ -24,9 +23,9 @@ pouta-s04
 
 
 [hardware_type_HPSL4540]
-#pouta-s01
-#pouta-s02
-#pouta-s03
+pouta-s01
+pouta-s02
+pouta-s03
 pouta-s04
 
 
