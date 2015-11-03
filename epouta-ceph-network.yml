@@ -23,12 +23,10 @@
           nm_controlled: "no"
           address: "{{ cluster_network_address }}"
           netmask: "{{ cluster_network_netmask }}"
-          gateway: "{{ cluster_network_gateway }}"
         - device: "{{ bonded_interface }}.{{ public_network_vlan_tag }}"
           vlan: "yes"
           bootproto: "static"
           nm_controlled: "no"
           address: "{{ public_network_address }}"
           netmask: "{{ public_network_netmask }}"
-          gateway: "{{ public_network_gateway }}"
 
