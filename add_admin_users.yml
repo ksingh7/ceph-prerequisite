@@ -1,0 +1,7 @@
+---
+- name: First add users to admin node as root
+  hosts: common 
+  remote_user: root
+
+  roles: 
+  - ansible-role-users 

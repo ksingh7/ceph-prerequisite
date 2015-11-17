@@ -1,0 +1,74 @@
+---
+admingroup: "admin"
+adminshell: "/bin/bash"
+adminusers:
+  - name: jenkins
+    state: present
+    uid: 831
+    group: jenkins
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAx7kHLi9oI3GLOpimDual99XI15scASR3lzR4vD6gs+q/fRw6OQhaXkgqyNi1zLcoXU+DWQXqnjYJ2DJoxZdk457ZdkLXfG7/E8PyO9UD+0unU+wMeaD8wvkqfz3m8m4We37dN6CVvh+nKgkZGBlHH0juF1IXDxB0BiP+9mM0k3jn1gbEeUgMEKR/hWeW/m+M+VKx58CqOaFbZU/KJRH3Yg4NFsbT8ILIc86PfTeHhC88TW7NFEAOgRLPo3xqreoVAh7iTwBdJflptnXnZV9piPbwU3xd0ksV00cNf7VX+GcARHK/2X1s5Wjg7fhQAZsxxjMeNs1zD1245UUXX7yDGw== jenkins@csc.fi"
+  - name: rlaurika
+    state: present
+    uid: 854
+    group: rlaurika
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA2PRSsmzVnxJYbDQG7xs2dHOkPqKSeD+Fa1RRokrzWvVaF36PiYRaHAs4hlS8O4uNKWKmnJ+3+TXP5r0eePdXvYWILx0DzBlm8BLBi3zJdzOyhg5NhjXZxA0f2l3AJMQrDgMqwqeaoi2Wxb6dc4JRSpWtGjgZS53H3hLmjeUr4RlgtxA7vdG++NNgls5PIYEHKNH/1/42dNjEje4z+49XcPIVMyLyvetSr343+IXhhz9xXIzfc0LnI7TVAd3odBI109582ksLpO4EugZHDgIW947ZgeCTjibWn23nBQ0OubhOBvjFANwEVLpBoQv4uQgYClUp98mTK5m8LdTXI3kqwQ=="
+  - name: khappone
+    state: present
+    uid: 18870
+    group: khappone
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA0rWS9J9BGswsUN4KrGpEy7i4tZvgD0bNpF+H599R9oa40L0/R/WfG9rRDb8JjUkdNdlxp5+87r1jJ618xMPx+12rJCJev8A9MTM87Cfa/D/iNUZWCwwD+zRgydJDQMbjXz9kCWlbH7UIlWKcMGjo1n9W0jECfNXqZdCc+fopsc0gSFJIT+QMFDdR1P7IR46AKmgyxE6QXUqkKWcn8soGbt3P/XPUFu6naNUgsMjKyX0Ba4CbH1Bo+ObjCcx+UDxL9XergSDEoVT6VIEbfzgnq5bsHlwvKSMGsMIZikPkF4xlKoOAkiF3T7T7DWJ96XP2RYqCFL5dcIBsoTb6rneO6Q=="
+  - name: ksingh
+    state: present
+    uid: 4585
+    group: ksingh
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH9rwvn8X4zia27aHQ/HcQwBjDHd5a66DxYXptwrmsTps7w/jVvTcgA5jAUtQYCjy2o2hhwcft4JM1ypn6BeRTfZ77v75S7/aOGI5RxXYrGaTE7rYxRkrLj3LCoyv/x4aIxAXKH8yaAOtUfyzlNBFFkUVoZ3nvcwcPK2wLvzu9Zcv7kmBiaZD7PHCRYNEq8g2QLfGAKaOjW336MrTLov/uRI+6wk0uJgHsyLUfhKtxU2EKUMd5qzBvIrD/f3Pnn/WBNyvEzDiDbt1Z7z7PJJ1pVphgePyI6D6GOxD9boeU4uq8MecPGl64SI2giHQy6jncho3qmkL0K+ALH5Swa2Ir"
+  - name: cthomas
+    state: present
+    uid: 4459
+    group: cthomas
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDGPvudLahmqBId5lVgG0d8r/KnDk74Fa9hu7O+iu9ppUslMizYvQCPif2Xmh3ZMWW55zoAEqCoUChMLqyEJKzZgVWnrl19SvygpummOhps7Dw5FMWDcRl9oZ8HnbEbsNptz3GoVGRdU4cjowLOrlxF1F/tnFPTHtrJojrB0kGZ5+PeoKhJKt3Zi5Do0hVxvjhGuKBWl8NYNT8oKaU2tB7ljbdgcoOKTdwHrucOZ8g8P55aCqAR8X1z9FWjkdqmrcUaj/8QSxNOQK8pO5dIIENJ+3UShXhukLoYLOnG3sSP9yyy+OsqAuIBB3XelP48loLzhvUVU217HNk1p4MeQX77"
+  - name: grawert
+    state: present
+    uid: 4912
+    group: grawert
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLjvnRrr8UNo2EpT/KrsifyYV5/QruuaSFeWl5Z98KQX62cxXoBIOu3k7SCsJFeMDE+22jQlJbURhe9zCUIVE8/rU669ZrSg7O5P8K26KulA4xad+Hw9YiXfZYJpkCglsQxDWN9OFmFOQjQfagChO4376u8MrfmuxotYTj+LoadxPWhdCmGDRT91aDLKdlFUBsKokv9KEmT8z5+46ZZz9xR4lFKMoFEP/l/EuvejB+Pn0KrUBRiqd8F7Tf2HchPvk7qUBk57Z+XRaNMZLBa5G+zTx9YR6KUKSnFQQietLiigf5sNypDF6+jvpsi6Q88Cj6/niu48gifncooHhlM0tH"
+  - name: glynn
+    state: present
+    uid: 27130
+    group: glynn
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDkwIW8zSsQ4Imo38dHUKuedr2ojnegnrrWAq1sqOEaqpzlQ8zXhe4hIfEp8yHBZnMlKv8WtG60GOcDx71W2KSOcZGUb3dFwmRCdAnZ+aS/vWZk5fTZUqRTJGOhaRg7gDztKVxOFg26ACEZKTiqGmT5v5oTPLGJKqENXhuAZ/NpG1caZeiCcz5ucPCubFZVHkpz5/D0W6CkL+GQUP7cuiFTnevangbkPQLv3YLvWc1nU1fELoYsp58c6Zah81zXONaHAkYRhiwGWsr9ke7k/pVzxyXyt3c0Rl1WuyYZ2EQLYuongA3dYmPH6cUC99zhIympbCKMBxHD5WUgZqc3IqZGliOKb2DC+q4/Xex7sEimsxv0t0mx4mODuBgQAXJaV1rLN9SgCCwgzW3+RCaxwG8kdbvUkqvOZ0wHAf49qiOOqBVM0z9yXzS3+xalDbaaxE9+vQeLY/4fJBy9kJCDGo2bpl6f4kaigeNHNPnMu3T477QMZ7XgjOSui11r7MGjl1WV++SX7mgxVLWlMfsuIypvPPTcdMBGlLn5+qznmvldUj9aobQ3bMCPHTmE0/hNzmRMPYlzpudw+O9bnG2QnjBeeBef4JCWWShtCxgMShCvb/sbq5iw03oVxnSQX2cJ24SyHNr8N3a2anW6zE6yScCnIzeHmWpYdpXCjNNtY8RLjQ="
+  - name: junousia
+    state: present
+    uid: 10000136
+    group: junousia
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuyHRfhDkaRE4hepgzjfBrjqKfzfpwqaN1VMz0JoSTllnBAHcUkoKTxX8mjV5BhxSrCS9PLkmHqFbG4wq0Pt7OgIdkUzUfQBV/fkEL0VCctvj1tz6ABz5o1+leFhvAarpkyE3LMLHKJegKbQLP1PV40el9iCYo5nc/d3+tYrshW+QRas5UFZgkXoO0bJMhZpfIUgPrg4NKh1L98DcjU+7N0fHkjrskvZiF0jc6Y0C6ZD+98zq1mRUD9/7RNCacaxN7GB0EmAZ/wHfuZzL13fKn7kFB8/fNfOXLAaeffwpeF1eWpn2bWdfRGCmrNjYAb39KdbxNIAiuewsFc9F8ip+BQ=="
+  - name: phyvarin
+    state: present
+    uid: 957
+    group: phyvarin
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-dss AAAAB3NzaC1kc3MAAACBAPK2I0dH5ZvHn4hSkt7FJUYprqDlU3q75O6aqQOsEtEhYNryahp5s9+0s89lFS8tiPpZxQKeaJZcz3nfNrS8z+Hl5xoBrNPYl7C/Rio4XOaqOkBN7ReQESg3mL8ObUXHKZ1qO5P8lEyvMoGbPqAc7s1/y5qK8lwCXDFy+hXdXjCtAAAAFQCIU5TF8uarQuEg0+iHyUW8OIyhbQAAAIEA2I0rF9+qBnPlwChi0frCsasQUa5vFZFHCmHte/sRJwZ7d5O5jZYUqFzELQR+jaGwIxt21yuZ5Q5e4ozU7YlBRf2GrwiTWNO3FHf93XMCs+XWTh3x0b/aaJvwG0aFqElCKXQbpvcEVf2cxU3et1oMyqH8Rblts5Cj5DMfyGp6sKEAAACAS3pRLq1S30BGoGcQmMtqJsw5aTlCZg/BLg4QKefveGUveTk2uLBQ7uwAuX145ZRkQEIyDJOSyytdGWONq5ECNl0pqOv4/IsX7UbIF11zbPvb2C0Bqxxr3W6Tqi+N5xgLpXr+1NNZQW/vap6vNBZjt/yiwmZyi0iVA7lHm44cmOg= phyvarin@varpunen.csc.fi"
+  - name: niininen
+    state: present
+    uid: 4446
+    group: niininen
+    groups: "{{admingroup}}"
+    shell: "{{adminshell}}"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAp65h2fsSqkQ2iWHe8KLDbrA5/jXEP2L20grH8GexrOt4yjt/v0nIH0w+RDVdDX9G/RgKOJ9Y2Inth5FVmtbTc1BVUP8W2yMJc2aOq47BKRUFNi5F0opryaclMBl+wlnfYGOrZPGfGoG7nBJC6LB4KdpwNaWui4XDvsUOgS2pEkYtJkC1YBsEx+T/WQuFq2yfJDeGNzpsmqSxBlmhEg99yJyISdzGUAyA1Eh4Li+073tkNsdsXASw20EpFdabu258Aqm1TYJRdmhmFTmNl+Wi9T0F0lRb7RzpMupkAYiUya0KqlzNQfFCIpOnk2ACQodvGB2G9MYJgPtweUHAaJHiUw== niininen@urkki.csc.fi"
