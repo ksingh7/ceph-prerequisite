@@ -1,10 +1,10 @@
 ---
 - hosts: common 
-  user: root
   tags: common
+  sudo: yes
   roles: 
   - common
-
+- include: add_admin_users.yml
 - include: cpouta-admin-network.yml
 - include: cpouta-ceph-network.yml
 - include: epouta-ceph-network.yml

@@ -1,6 +1,6 @@
 ---
 - hosts: hardware_type_HPSL4540
-  user: root
+  sudo: yes
   tags: cpouta-admin-network
   roles:
     - role: network_interface
