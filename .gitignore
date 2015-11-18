@@ -1,0 +1,2 @@
+# Ignore roles pulled through requirements.yml. See README.
+roles/ansible-role-*
