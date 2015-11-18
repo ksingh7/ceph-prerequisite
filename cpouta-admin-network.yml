@@ -4,7 +4,7 @@
   tags: cpouta-admin-network
   roles:
     - role: network_interface
-      when: configure_admin_network and hardware_type_HPSL4540 and project == "cpouta"
+      when: project == "cpouta" and (configure_admin_network and hardware_type_HPSL4540)
       network_bond_interfaces:
         - device: "{{ bonded_interface }}" 
           bootproto: "static"
