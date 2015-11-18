@@ -29,7 +29,7 @@ adminusers:
     group: ksingh
     groups: "{{admingroup}}"
     shell: "{{adminshell}}"
-    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH9rwvn8X4zia27aHQ/HcQwBjDHd5a66DxYXptwrmsTps7w/jVvTcgA5jAUtQYCjy2o2hhwcft4JM1ypn6BeRTfZ77v75S7/aOGI5RxXYrGaTE7rYxRkrLj3LCoyv/x4aIxAXKH8yaAOtUfyzlNBFFkUVoZ3nvcwcPK2wLvzu9Zcv7kmBiaZD7PHCRYNEq8g2QLfGAKaOjW336MrTLov/uRI+6wk0uJgHsyLUfhKtxU2EKUMd5qzBvIrD/f3Pnn/WBNyvEzDiDbt1Z7z7PJJ1pVphgePyI6D6GOxD9boeU4uq8MecPGl64SI2giHQy6jncho3qmkL0K+ALH5Swa2Ir"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDH9rwvn8X4zia27aHQ/HcQwBjDHd5a66DxYXptwrmsTps7w/jVvTcgA5jAUtQYCjy2o2hhwcft4JM1ypn6BeRTfZ77v75S7/aOGI5RxXYrGaTE7rYxRkrLj3LCoyv/x4aIxAXKH8yaAOtUfyzlNBFFkUVoZ3nvcwcPK2wLvzu9Zcv7kmBiaZD7PHCRYNEq8g2QLfGAKaOjW336MrTLov/uRI+6wk0uJgHsyLUfhKtxU2EKUMd5qzBvIrD/f3Pnn/WBNyvEzDiDbt1Z7z7PJJ1pVphgePyI6D6GOxD9boeU4uq8MecPGl64SI2giHQy6jncho3qmkL0K+ALH5Swa2Ir ksingh@teeri.csc.fi"
   - name: cthomas
     state: present
     uid: 4459
