@@ -1,7 +1,31 @@
 ---
-- name: First add users to admin node as root
-  hosts: common 
-  remote_user: root
+# When a host is first built we need to use the root user for adding other
+# admins. after that, we want to use the current admin user. This is the
+# cleanest way I could find to switch the user at run time.
+- name: Find user with credentials for adding users
+  hosts: common
+  gather_facts: false
+  pre_tasks:
+  - name: Test login in as current user
+    local_action: shell ssh -o PasswordAuthentication=no {{ inventory_hostname }} "echo success"
+    ignore_errors: true
+    register: login_as_self
 
+- name: Add/remove admin users as current user
+  hosts: common
+  gather_facts: false
   roles: 
-  - ansible-role-users 
+  - { role: ansible-role-users, when: login_as_self.stdout == "success", sudo: yes }
+
+- name: Add/remove admin users as root
+  hosts: common
+  gather_facts: false
+  remote_user: root
+  roles: 
+  - { role: ansible-role-users, when: login_as_self.stdout != "success"  }
+
+# We should remove all the keys in root at this point (if the current user can
+# log in and sudo to root)
+# We need to use something like:
+#
+# authorized_key: user=root exclusive=yes
