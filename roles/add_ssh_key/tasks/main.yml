@@ -1,7 +1,0 @@
----
-- name: Set up authorized_keys for user root
-  authorized_key: user=root key="{{ item }}"
-  with_file:
-    - roles/add_ssh_key/public_keys/phyvarin
-    - roles/add_ssh_key/public_keys/ksingh
-    - roles/add_ssh_key/public_keys/niininen
