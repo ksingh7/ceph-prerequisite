@@ -1,0 +1,11 @@
+---
+# sshd config. Used by:
+# https://github.com/willshersystems/ansible-sshd 
+# (which we rename to ansible-role-sshd in requirements.yml)
+sshd:
+  PermitRootLogin: no
+  PasswordAuthentication: no
+  ChallengeResponseAuthentication: no
+  UsePAM: no
+  # Only users in the admingroup group can log in
+  AllowGroups: {{ admingroup }}
