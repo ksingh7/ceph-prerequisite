@@ -8,4 +8,4 @@ sshd:
   ChallengeResponseAuthentication: no
   UsePAM: no
   # Only users in the admingroup group can log in
-  AllowGroups: {{ admingroup }}
+  AllowGroups: "{{ admingroup }}"
