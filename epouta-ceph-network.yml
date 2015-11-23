@@ -14,8 +14,8 @@
           bond_miimon: "500"
           #bond_slaves: [eth0, eth1] # For epouta EL6 HPSL4540
           #bond_slaves: [eth4, eth5] # For ePouta EL6 HPDL380
-          bond_slaves: [eth2, eth3]  # For ePouta EL7 
-          #bond_slaves: [eno3, eth0] # For ePouta EL7
+          #bond_slaves: [eth2, eth3]  # For ePouta EL7 
+          bond_slaves: [eno3, eth3] # For ePouta EL7
       network_vlan_interfaces:
         - device: "{{ bonded_interface }}.{{ cluster_network_vlan_tag }}"
           vlan: "yes"

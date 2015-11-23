@@ -27,15 +27,15 @@ storage0107
 storage0108
 storage0109
 storage0110
-storage0111
-storage0112
-storage0113
-storage0114
-storage0115
-storage0201
-storage0202
-storage0203
-storage0204
+#storage0111
+#storage0112
+#storage0113
+#storage0114
+#storage0115
+#storage0201
+#storage0202
+#storage0203
+#storage0204
 
 
 [hardware_type_HPDL380]
@@ -58,7 +58,7 @@ storage0204
 [hardware_type_HPSL4540]
 #storage0201
 #storage0202
-#storage0203
+storage0203
 #storage0204
 
 [test]

@@ -4,6 +4,7 @@
 # cleanest way I could find to switch the user at run time.
 - name: Find user with credentials for adding users
   hosts: common
+  tags: add_admin_users
   gather_facts: false
   pre_tasks:
   - name: Test login in as current user
@@ -13,12 +14,14 @@
 
 - name: Add/remove admin users as current user
   hosts: common
+  tags: add_admin_users
   gather_facts: false
   roles: 
   - { role: ansible-role-users, when: login_as_self.stdout == "success", sudo: yes }
 
 - name: Add/remove admin users as root
   hosts: common
+  tags: add_admin_users
   gather_facts: false
   remote_user: root
   roles: 
