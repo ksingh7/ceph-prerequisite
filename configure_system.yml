@@ -1,10 +1,17 @@
 ---
-- hosts: common 
+- name: Configure admin users (potentially as root)
+  hosts: common
+  gather_facts: no
+- include: add_admin_users.yml
+
+- name: Configure the system (as current admin user)
+  hosts: common 
   tags: common
   sudo: yes
   roles: 
   - common
-- include: add_admin_users.yml
+  - ansible-role-sshd
+
 - include: cpouta-admin-network.yml
 - include: cpouta-ceph-network.yml
 - include: epouta-ceph-network.yml

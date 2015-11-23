@@ -1,6 +1,6 @@
 ---
-admingroup: "admin"
-adminshell: "/bin/bash"
+admingroup: admin
+adminremove_passwords: yes
 adminusers:
   - name: jenkins
     state: present
