@@ -1,9 +1,12 @@
 [all:vars]
 # Do Not Change This
 project=cpouta
+
+management_interface=eno1
 bonded_interface=bond0
 
 # To configure network interfaces ,valid options are 'true' or 'false'
+configure_management_network=true
 configure_admin_network=true
 configure_ceph_network=true
 

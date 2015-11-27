@@ -1,4 +1,8 @@
 ---
+management_network_address: 86.50.163.115
+management_network_netmask: 255.255.255.0
+management_network_gateway: 86.50.163.1
+
 admin_network_address: 10.100.50.2 
 admin_network_netmask: 255.255.0.0
 admin_network_gateway: 10.100.0.13 

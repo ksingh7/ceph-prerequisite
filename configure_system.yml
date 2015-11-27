@@ -12,7 +12,12 @@
   - common
   - ansible-role-sshd
 
+####### cPouta Network Configuration #######
+
+- include: cpouta-management-network.yml
 - include: cpouta-admin-network.yml
 - include: cpouta-ceph-network.yml
-- include: epouta-ceph-network.yml
 
+####### ePouta Network Configuration #######
+
+- include: epouta-ceph-network.yml
