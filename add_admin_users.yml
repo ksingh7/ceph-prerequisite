@@ -8,7 +8,7 @@
   gather_facts: false
   pre_tasks:
   - name: Test login in as current user
-    local_action: shell ssh -o PasswordAuthentication=no {{ inventory_hostname }} "echo success"
+    local_action: shell ssh -F ssh.config -o PasswordAuthentication=no {{ inventory_hostname }} "echo success"
     ignore_errors: true
     register: login_as_self
 
