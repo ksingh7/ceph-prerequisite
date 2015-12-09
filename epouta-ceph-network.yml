@@ -1,7 +1,7 @@
 ---
 - hosts: hardware_type_HPSL4540
   sudo: yes
-  tags: epouta-ceph-network
+  tags: epouta-ceph-network-sl4540
   roles:
     - role: network_interface
       when: configure_ceph_network and hardware_type_HPSL4540 and project == "epouta"
@@ -16,6 +16,35 @@
           #bond_slaves: [eth4, eth5] # For ePouta EL6 HPDL380
           #bond_slaves: [eth2, eth3]  # For ePouta EL7 
           bond_slaves: [eno3, eth1] # For ePouta EL7
+      network_vlan_interfaces:
+        - device: "{{ bonded_interface }}.{{ cluster_network_vlan_tag }}"
+          vlan: "yes"
+          bootproto: "static"
+          nm_controlled: "no"
+          address: "{{ cluster_network_address }}"
+          netmask: "{{ cluster_network_netmask }}"
+        - device: "{{ bonded_interface }}.{{ public_network_vlan_tag }}"
+          vlan: "yes"
+          bootproto: "static"
+          nm_controlled: "no"
+          address: "{{ public_network_address }}"
+          netmask: "{{ public_network_netmask }}"
+
+- hosts: hardware_type_HPDL380
+  sudo: yes
+  tags: epouta-ceph-network-dl380
+  roles:
+    - role: network_interface
+      when: configure_ceph_network and hardware_type_HPDL380 and project == "epouta"
+      network_bond_interfaces:
+        - device: "{{ bonded_interface }}"
+          bootproto: "static"
+          onboot: "yes"
+          nm_controlled: "no"
+          bond_mode: "active-backup"
+          bond_miimon: "500"
+          #bond_slaves: [eth4, eth5] # For ePouta EL6
+          bond_slaves: [ens3, ens3d1] # For ePouta EL7
       network_vlan_interfaces:
         - device: "{{ bonded_interface }}.{{ cluster_network_vlan_tag }}"
           vlan: "yes"

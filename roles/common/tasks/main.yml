@@ -1,7 +1,3 @@
 ---
 - name: Updating Hosts file
   template: src={{ project }}.hosts dest=/etc/hosts mode=0644  
-
-- name: Installing HP Array Controller Utility ( hpacucli )
-  yum: name=hpacucli state=latest
-  ignore_errors: true

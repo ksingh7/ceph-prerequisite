@@ -8,9 +8,9 @@ configure_ceph_network=true
 
 # If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
-hardware_type_HPDL380=false
+hardware_type_HPDL380=true
 
-hardware_type_HPSL4540=true
+hardware_type_HPSL4540=false
 
 # VLAN Tags
 cluster_network_vlan_tag=999
