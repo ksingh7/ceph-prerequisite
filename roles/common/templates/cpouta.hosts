@@ -9,6 +9,33 @@
 10.100.50.3 pouta-s03.pouta.csc.fi pouta-s03 s03
 10.100.50.4 pouta-s04.pouta.csc.fi pouta-s04 s04
 
+10.100.50.5  ceph-s5.pouta.csc.fi ceph-s5 s5
+10.100.50.6  ceph-s6.pouta.csc.fi ceph-s6 s6
+10.100.50.7  ceph-s7.pouta.csc.fi ceph-s7 s7
+10.100.50.8  ceph-s8.pouta.csc.fi ceph-s8 s8
+10.100.50.24 ceph-s9.pouta.csc.fi ceph-s9 s9
+
+10.100.50.9  ceph-c1s1.pouta.csc.fi ceph-c1s1 c1s1
+10.100.50.10 ceph-c1s2.pouta.csc.fi ceph-c1s2 c1s2
+10.100.50.11 ceph-c1s3.pouta.csc.fi ceph-c1s3 c1s3
+
+10.100.50.12 ceph-c2s1.pouta.csc.fi ceph-c2s1 c2s1
+10.100.50.13 ceph-c2s2.pouta.csc.fi ceph-c2s2 c2s2
+10.100.50.14 ceph-c2s3.pouta.csc.fi ceph-c2s3 c2s3
+
+10.100.50.15 ceph-c3t1.pouta.csc.fi ceph-c3t1 c3t1
+10.100.50.16 ceph-c3s2.pouta.csc.fi ceph-c3s2 c3s2
+10.100.50.17 ceph-c3s3.pouta.csc.fi ceph-c3s3 c3s3
+
+10.100.50.18 ceph-c4s1.pouta.csc.fi ceph-c4s1 c4s1
+10.100.50.19 ceph-c4t2.pouta.csc.fi ceph-c4t2 c4t2
+10.100.50.20 ceph-c4s3.pouta.csc.fi ceph-c4s3 c4s3
+
+10.100.50.21 ceph-mon21.pouta.csc.fi ceph-mon1 mon1
+10.100.50.22 ceph-mon22.pouta.csc.fi ceph-mon2 mon2
+10.100.50.23 ceph-mon23.pouta.csc.fi ceph-mon3 mon3
+
+
 ################ Ceph Storage Nodes Cluster / Internal Network ###################
 
 10.102.50.1 pouta-s01-int
@@ -16,9 +43,63 @@
 10.102.50.3 pouta-s03-int
 10.102.50.4 pouta-s04-int
 
+10.100.50.5 ceph-s5-int
+10.100.50.6 ceph-s6-int
+10.100.50.7 ceph-s7-int
+10.100.50.8 ceph-s8-int
+10.100.50.24 ceph-s9-int
+
+10.100.50.9  ceph-c1s1-int
+10.100.50.10 ceph-c1s2-int
+10.100.50.11 ceph-c1s3-int
+
+10.100.50.12 ceph-c2s1-int
+10.100.50.13 ceph-c2s2-int
+10.100.50.14 ceph-c2s3-int
+
+10.100.50.15 ceph-c3t1-int
+10.100.50.16 ceph-c3s2-int
+10.100.50.17 ceph-c3s3-int
+
+10.100.50.18 ceph-c4s1-int
+10.100.50.19 ceph-c4t2-int
+10.100.50.20 ceph-c4s3-int
+
+10.100.50.21 ceph-mon1-int
+10.100.50.22 ceph-mon2-int
+10.100.50.23 ceph-mon3-int
+
+
 ################ Ceph Storage Nodes Public Network ###################
 
 10.101.50.1 pouta-s01-pub
 10.101.50.2 pouta-s02-pub
 10.101.50.3 pouta-s03-pub
 10.101.50.4 pouta-s04-pub
+
+10.100.50.5 ceph-s5-pub
+10.100.50.6 ceph-s6-pub
+10.100.50.7 ceph-s7-pub
+10.100.50.8 ceph-s8-pub
+10.100.50.24 ceph-s9-pub
+
+10.100.50.9  ceph-c1s1-pub
+10.100.50.10 ceph-c1s2-pub
+10.100.50.11 ceph-c1s3-pub
+
+10.100.50.12 ceph-c2s1-pub
+10.100.50.13 ceph-c2s2-pub
+10.100.50.14 ceph-c2s3-pub
+
+10.100.50.15 ceph-c3t1-pub
+10.100.50.16 ceph-c3s2-pub
+10.100.50.17 ceph-c3s3-pub
+
+10.100.50.18 ceph-c4s1-pub
+10.100.50.19 ceph-c4t2-pub
+10.100.50.20 ceph-c4s3-pub
+
+10.100.50.21 ceph-mon1-pub
+10.100.50.22 ceph-mon2-pub
+10.100.50.23 ceph-mon3-pub
+

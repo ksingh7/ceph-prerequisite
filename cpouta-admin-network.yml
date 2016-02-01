@@ -12,7 +12,7 @@
           nm_controlled: "no"
           bond_mode: "active-backup"
           bond_miimon: "500"
-          bond_slaves: [eno3, eth0]
+          bond_slaves: [eno3, eno3d1]
           address: "{{ admin_network_address }}"
           netmask: "{{ admin_network_netmask }}"
           gateway: "{{ admin_network_gateway }}"
