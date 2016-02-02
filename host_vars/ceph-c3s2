@@ -1,0 +1,13 @@
+---
+management_network_address: 86.50.163.67 
+management_network_netmask: 255.255.255.0
+
+admin_network_address: 10.100.50.16
+admin_network_netmask: 255.255.0.0
+admin_network_gateway: 10.100.0.13 
+
+public_network_address: 10.101.50.16 
+public_network_netmask: 255.255.0.0
+
+cluster_network_address: 10.102.50.16
+cluster_network_netmask: 255.255.0.0
