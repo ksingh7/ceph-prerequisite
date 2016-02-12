@@ -16,6 +16,9 @@ hardware_type_HPSL4540=false
 cluster_network_vlan_tag=999
 public_network_vlan_tag=1000
 
+# valid options are 'manual' or 'spacewalk'
+configure_yum_repos = spacewalk 
+
 [common]
 storage0101
 storage0102

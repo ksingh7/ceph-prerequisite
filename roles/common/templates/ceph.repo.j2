@@ -1,0 +1,26 @@
+[ceph]
+name=Ceph packages for $basearch
+baseurl=http://eu.ceph.com/rpm-{{ ceph_release }}/{{ distro }}/$basearch
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=http://eu.ceph.com/keys/release.asc
+priority=1
+
+[ceph-noarch]
+name=Ceph noarch packages
+baseurl=http://eu.ceph.com/rpm-{{ ceph_release }}/{{ distro }}/noarch
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=http://eu.ceph.com/keys/release.asc
+priority=1
+
+[ceph-source]
+name=Ceph source packages
+baseurl=http://eu.ceph.com/rpm-{{ ceph_release }}/{{ distro }}/SRPMS
+enabled=1
+gpgcheck=1
+type=rpm-md
+gpgkey=http://eu.ceph.com/keys/release.asc
+priority=1

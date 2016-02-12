@@ -2,6 +2,8 @@
 # This file contains vailables that can be uses across different environments
 
 elrepo_kernel_release: "kernel-lt.x86_64"
+ceph_release: hammer 
+distro: el7
 
 NET_BOND_INTERFACE: "bond0"
 NET_BONDING_OPTS: "mode=1 miimon=100"

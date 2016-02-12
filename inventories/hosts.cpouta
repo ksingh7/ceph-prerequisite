@@ -18,6 +18,9 @@ hardware_type_HPSL4540=true
 cluster_network_vlan_tag=1001
 public_network_vlan_tag=1002
 
+# valid options are 'manual' or 'spacewalk' 
+configure_yum_repos = manual 
+
 [common]
 pouta-s0[1:4]
 ceph-c1s[1:3]
