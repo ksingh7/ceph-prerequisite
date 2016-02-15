@@ -1,0 +1,27 @@
+[fwpp]
+name=HP Firmware Pack for ProLiant
+baseurl=http://qHaCnG_w9-HTfPYNklhlDIQy9YNEFtnfn8GkEJa9VZ4blsotIB4FON_aj8dPIoKSKc5FHJFvReg5QoUue49y5g:null@downloads.linux.hpe.com/repo/fwpp/rhel/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/current/
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-fwpp
+
+[hpsum]
+name=HP Smart Update Manager
+baseurl=http://downloads.linux.hp.com/repo/hpsum/rhel/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/current/
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-hpsum
+
+[stk]
+name=HP scripting tools
+baseurl=http://downloads.linux.hp.com/repo/stk/rhel/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/current/
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-stk
+
+[spp]
+name=Service Pack for ProLiant
+baseurl=http://downloads.linux.hpe.com/repo/spp/rhel/{{ ansible_distribution_major_version }}/{{ ansible_architecture }}/current/
+enabled=1
+gpgcheck=0
+gpgkey=file:///etc/pki/rpm-gpg/GPG-KEY-ServicePackforProLiant

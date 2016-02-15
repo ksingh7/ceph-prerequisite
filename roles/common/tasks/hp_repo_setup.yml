@@ -1,0 +1,16 @@
+---
+- name: Adding HP FWPP gpg keys 
+  template: src=GPG-KEY-fwpp.j2 dest=/etc/pki/rpm-gpg/GPG-KEY-fwpp owner=root group=root mode=0644
+
+- name: Adding HPSUM gpg keys
+  template: src=GPG-KEY-hpsum.j2 dest=/etc/pki/rpm-gpg/GPG-KEY-hpsum owner=root group=root mode=0644
+
+- name: Adding HP Scripting Tool Kit gpg keys
+  template: src=GPG-KEY-stk.j2 dest=/etc/pki/rpm-gpg/GPG-KEY-stk owner=root group=root mode=0644
+
+- name: Adding HP SPP gpg keys
+  template: src=GPG-KEY-ServicePackforProLiant.j2 dest=/etc/pki/rpm-gpg/GPG-KEY-ServicePackforProLiant owner=root group=root mode=0644
+
+- name: Adding HP YUM repository file
+  template: src=HP.repo.j2 dest=/etc/yum.repos.d/HP.repo owner=root group=root mode=0644
+
