@@ -1,6 +1,26 @@
 ---
+- include: centos7_journal_bug_fix.yml
+
 - name: Updating Hosts file
   template: src={{ project }}.hosts dest=/etc/hosts mode=0644  
+
+- name: Installing Packages
+  yum: name="{{item}}" state=present
+  with_items:
+    - htop
+    - ntp
+    - tree
+    - perl
+    - wget
+    - tmux
+    - glances
+    - telnet
+    - vim
+    - dstat
+    - iperf
+    - fio
+    - nmap
+    - hpssacli
 
 - include: repos_setup.yml
   when: configure_yum_repos == 'manual'

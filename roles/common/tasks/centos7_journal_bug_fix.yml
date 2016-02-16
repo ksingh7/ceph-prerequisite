@@ -1,0 +1,16 @@
+---
+- name: Verify if systemd-219 package is present
+  shell: rpm -qa | grep -i systemd-219
+  register: systemd_version
+
+- name: Copy systemd-219 journal patch script
+  copy: src=roles/common/templates/systemd_journal_patch.py dest=/tmp/systemd_journal_patch.py owner=root group=root mode=0744
+  when: systemd_version.rc == 0
+
+- name: Executing journal patch script
+  shell: /bin/python /tmp/systemd_journal_patch.py
+  register: systemd_journal_patch_output
+  when: systemd_version.rc == 0
+
+- debug: msg="{{ systemd_journal_patch_output.stdout }}"
+  when: systemd_version.rc == 0

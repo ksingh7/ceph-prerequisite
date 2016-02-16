@@ -19,7 +19,7 @@ cluster_network_vlan_tag=1001
 public_network_vlan_tag=1002
 
 # valid options are 'manual' or 'spacewalk' 
-configure_yum_repos = manual 
+configure_yum_repos = spacewalk 
 
 [common]
 pouta-s0[1:4]
