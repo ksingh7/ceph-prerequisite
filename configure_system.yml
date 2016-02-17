@@ -1,6 +1,7 @@
 ---
 - name: Configure admin users (potentially as root)
   hosts: common
+  tags: common
   gather_facts: no
 - include: add_admin_users.yml
 

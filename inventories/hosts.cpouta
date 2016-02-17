@@ -2,7 +2,6 @@
 # Do Not Change This
 project=cpouta
 
-management_interface=eno1
 bonded_interface=bond0
 
 # To configure network interfaces ,valid options are 'true' or 'false'
@@ -12,7 +11,7 @@ configure_ceph_network=true
 
 # If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
-hardware_type_HPSL4540=true
+#TR#hardware_type_HPSL4540=true
 
 # VLAN Tags
 cluster_network_vlan_tag=1001
@@ -33,28 +32,3 @@ ceph-c4s3
 ceph-s[5:9]
 ceph-mon[1:3]
 
-
-[hardware_type_HPSL4540]
-pouta-s0[1:4]
-ceph-c1s[1:3]
-ceph-c2s[1:3]
-ceph-c3s[2:3]
-ceph-c3t1
-ceph-c4s1
-ceph-c4t2
-ceph-c4s3
-ceph-s[5:9]
-ceph-mon[1:3]
-
-
-[test]
-pouta-s0[1:4]
-ceph-c1s[1:3]
-ceph-c2s[1:3]
-ceph-c3s[2:3]
-ceph-c3t1
-ceph-c4s1
-ceph-c4t2
-ceph-c4s3
-ceph-s[5:9]
-ceph-mon[1:3]

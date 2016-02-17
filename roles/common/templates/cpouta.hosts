@@ -65,11 +65,6 @@
 10.102.50.19 ceph-c4t2-int
 10.102.50.20 ceph-c4s3-int
 
-10.102.50.21 ceph-mon1-int
-10.102.50.22 ceph-mon2-int
-10.102.50.23 ceph-mon3-int
-
-
 ################ Ceph Storage Nodes Public Network ###################
 
 10.101.50.1 pouta-s01-pub

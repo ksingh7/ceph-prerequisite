@@ -1,0 +1,20 @@
+---
+management_interface: em3 
+bond_slave_interface_1: p3p1 
+bond_slave_interface_2: p3p2 
+
+node_type: mon
+
+management_network_address: 86.50.161.64 
+management_network_netmask: 255.255.255.0
+management_network_gateway:
+
+admin_network_address: 10.100.50.21
+admin_network_netmask: 255.255.0.0
+admin_network_gateway: 10.100.0.13 
+
+public_network_address: 10.101.50.21 
+public_network_netmask: 255.255.0.0
+
+cluster_network_address:
+cluster_network_netmask:

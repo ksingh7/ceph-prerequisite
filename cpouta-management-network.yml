@@ -1,10 +1,10 @@
 ---
-- hosts: hardware_type_HPSL4540
+- hosts: common 
   sudo: yes
   tags: cpouta-management-network
   roles:
     - role: network_interface
-      when: project == "cpouta" and (configure_management_network and hardware_type_HPSL4540)
+      when: project == "cpouta" and configure_management_network
       network_ether_interfaces:
         - device: "{{ management_interface }}" 
           bootproto: "static"
