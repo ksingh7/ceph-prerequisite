@@ -4,10 +4,14 @@
 - name: Updating Hosts file
   template: src={{ project }}.hosts dest=/etc/hosts mode=0644  
 
+- include: repos_setup.yml
+  when: configure_yum_repos == 'manual'
+
 - name: Installing Packages
   yum: name="{{item}}" state=present
   with_items:
     - htop
+    - atop
     - ntp
     - tree
     - perl
@@ -21,6 +25,3 @@
     - fio
     - nmap
     - hpssacli
-
-- include: repos_setup.yml
-  when: configure_yum_repos == 'manual'
