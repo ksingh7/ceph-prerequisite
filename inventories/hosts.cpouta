@@ -1,13 +1,9 @@
 [all:vars]
 # Do Not Change This
 project=cpouta
+opsview_gearman_proxy_host=193.167.254.68
 
 bonded_interface=bond0
-
-# To configure network interfaces ,valid options are 'true' or 'false'
-configure_management_network=true
-configure_admin_network=true
-configure_ceph_network=true
 
 # If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
@@ -38,3 +34,5 @@ ceph-c4t2
 ceph-c4s3
 ceph-s[5:9]
 
+[collectd_ceph_plugin_node]
+pouta-s01

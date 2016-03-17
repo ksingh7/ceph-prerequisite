@@ -1,0 +1,21 @@
+---
+
+- file: path=/etc/collectd/plugins state=directory mode=0755
+
+- file: path=/tmp/collectd_packages state=directory mode=0755
+
+- name: Copying collectd packages
+  copy: src=roles/collectd/templates/{{ item }} dest=/tmp/collectd_packages
+  with_items:
+   - collectd-5.5.0-4.el6.csc.x86_64.rpm
+   - collectd-disk-5.5.0-4.el6.csc.x86_64.rpm
+   - collectd-python-5.5.0-4.el6.csc.x86_64.rpm
+
+- name: Installing collectd package
+  yum: state=present name=/tmp/collectd_packages/collectd-5.5.0-4.el6.csc.x86_64.rpm
+
+- name: Installing collectd-python package
+  yum: state=present name=/tmp/collectd_packages/collectd-python-5.5.0-4.el6.csc.x86_64.rpm
+
+- name: Installing collectd-disk package
+  yum: state=present name=/tmp/collectd_packages/collectd-disk-5.5.0-4.el6.csc.x86_64.rpm

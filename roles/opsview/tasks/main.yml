@@ -1,0 +1,78 @@
+---
+- name: Creating nagios group
+  group: name=nagios gid=900 state=present
+
+- name: Creating nagios user
+  user: name=nagios uid=5900 group=nagios comment="nagios user" home="/var/log/nagios" shell=/bin/bash state=present
+
+- name: Install opsview-agent package
+  yum: state=present name=opsview-agent disable_gpg_check=yes
+
+- name: updating local nrpe.cfg file with allowed host 
+  lineinfile: dest=/usr/local/nagios/etc/nrpe.cfg regexp="^#allowed_hosts" line="allowed_hosts={{ opsview_gearman_proxy_host }}" state=present insertafter="^#allowed_hosts"
+
+- name: Check if check_cpu already exists
+  shell: grep check_cpu /usr/local/nagios/etc/nrpe.cfg
+  register: check_cpu
+  ignore_errors: true
+
+- name: Check if check_ceph_health already exists
+  shell: grep check_ceph_health /usr/local/nagios/etc/nrpe.cfg
+  register: check_ceph_health 
+  ignore_errors: true
+
+- name: Copying opsview cpu check
+  copy: src=roles/opsview/templates/check_cpu.sh dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
+
+- name: Copying opsview ceph health check
+  copy: src=roles/opsview/templates/check_ceph_health dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
+
+- name: Adding cpu check to nrpe configuration
+  shell: echo "command[check_cpu]=/usr/local/nagios/libexec/check_cpu.sh" >> /usr/local/nagios/etc/nrpe.cfg
+  when: check_cpu.rc != 0
+
+- name: Adding ceph health check to nrpe configuration
+  shell: echo "command[check_ceph_health]=/usr/local/nagios/libexec/check_ceph_health" >> /usr/local/nagios/etc/nrpe.cfg
+  when: check_ceph_health.rc != 0
+
+- name: Nagios NRPE  | get iptables rules
+  shell: iptables -L
+  register: iptablesrules
+#  always_run: yes
+  when: ansible_distribution_major_version == '6'
+ 
+- name: Nagios NRPE | add Nagios NRPE iptable rule
+  shell: /sbin/iptables -I INPUT -s {{ opsview_gearman_proxy_host }} -p tcp -m tcp --dport 5666 -m comment --comment "Nagios NRPE" -j ACCEPT
+  when: ansible_distribution_major_version == '6' and  iptablesrules.stdout.find("NRPE") == -1
+ # always_run: yes
+  register: iptables
+ 
+- name: save iptables
+  shell: /sbin/iptables-save > /etc/sysconfig/iptables
+  when: ansible_distribution_major_version == '6' and iptables.changed
+ 
+- name: restart iptables
+  service: name=iptables state=restarted
+  when: ansible_distribution_major_version == '6' and iptables.changed
+
+- name: Copying firewalld service file 
+  copy: src=roles/opsview/templates/opsview.xml dest=/etc/firewalld/services mode=640 
+  when: ansible_distribution_major_version == '7'
+
+- name: Applying firewalld service
+  shell: firewall-cmd --reload 
+  when: ansible_distribution_major_version == '7'
+
+- name: Adding firewalld rules
+  firewalld: zone=public service=opsview permanent=true state=enabled
+  when: ansible_distribution_major_version == '7'
+
+- name: Restarting firewalld service
+  shell: firewall-cmd --reload
+  when: ansible_distribution_major_version == '7'
+
+- name: stop opsview-agent 
+  service: name=opsview-agent state=stopped enabled=yes
+
+- name: start opsview-agent
+  service: name=opsview-agent state=started enabled=yes
