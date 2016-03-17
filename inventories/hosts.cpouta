@@ -20,7 +20,14 @@ public_network_vlan_tag=1002
 # valid options are 'manual' or 'spacewalk' 
 configure_yum_repos = spacewalk 
 
-[common]
+[common:children]
+mon_nodes
+osd_nodes
+
+[mon_nodes]
+ceph-mon[1:3]
+
+[osd_nodes]
 pouta-s0[1:4]
 ceph-c1s[1:3]
 ceph-c2s[1:3]
@@ -30,5 +37,4 @@ ceph-c4s1
 ceph-c4t2
 ceph-c4s3
 ceph-s[5:9]
-ceph-mon[1:3]
 
