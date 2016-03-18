@@ -1,0 +1,6 @@
+---
+- hosts: common
+  sudo: true
+  tags: opsview
+  roles:
+  - opsview

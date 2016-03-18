@@ -1,0 +1,5 @@
+---
+- hosts: hp_servers
+  roles:
+     - hp-firmware-upgrade
+

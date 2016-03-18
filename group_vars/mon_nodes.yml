@@ -1,0 +1,7 @@
+network_vlan_interfaces:
+    - device: "{{ bonded_interface }}.{{ public_network_vlan_tag }}"
+      vlan: "yes"
+      bootproto: "static"
+      nm_controlled: "no"
+      address: "{{ public_network_address }}"
+      netmask: "255.255.0.0"

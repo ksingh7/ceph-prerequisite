@@ -6,15 +6,9 @@ bond_slave_interface_2: eno3d1
 node_type: osd
 
 management_network_address: 86.50.163.62
-management_network_netmask: 255.255.255.0
-management_network_gateway:
 
 admin_network_address: 10.100.50.11
-admin_network_netmask: 255.255.0.0
-admin_network_gateway: 10.100.0.13 
 
 public_network_address: 10.101.50.11
-public_network_netmask: 255.255.0.0
 
 cluster_network_address: 10.102.50.11
-cluster_network_netmask: 255.255.0.0

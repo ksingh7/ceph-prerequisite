@@ -1,0 +1,19 @@
+---
+
+- file: path=/etc/collectd/plugins/ceph state=directory mode=0755
+
+- name: Copying collectd Ceph plugin files
+  copy: src={{ item }} dest=/etc/collectd/plugins/ceph
+  with_items:
+   - base.py
+   - ceph_latency_plugin.py
+   - ceph_monitor_plugin.py
+   - ceph_osd_plugin.py
+   - ceph_pg_plugin.py
+   - ceph_pool_plugin.py
+
+- name: Add collectd configuration file
+  template: src=collectd.conf_with_ceph_plugin.j2 dest=/etc/collectd.conf backup=yes
+
+- name: Starting collectd service
+  service: name=collectd state=restarted enabled=yes

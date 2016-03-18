@@ -1,0 +1,11 @@
+---
+- include: collectd_centos6.yml
+  when: ansible_distribution_major_version == '6'
+
+- include: collectd_centos7.yml
+  when: ansible_distribution_major_version == '7'
+
+- include_vars: ../vars/csc_password.yml
+  when: project == "cpouta"
+
+- include: common.yml
