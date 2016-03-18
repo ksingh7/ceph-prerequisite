@@ -1,0 +1,5 @@
+---
+- hosts: dell_servers
+  roles:
+     - dell-firmware-upgrade
+

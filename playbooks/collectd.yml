@@ -1,0 +1,13 @@
+---
+- hosts: common
+  sudo: true
+  tags: collectd  
+  roles: 
+  - collectd
+
+- hosts: collectd_ceph_plugin_node
+  tags: collectd_ceph 
+  sudo: true
+  roles:
+  - collectd_ceph
+

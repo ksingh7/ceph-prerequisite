@@ -15,9 +15,7 @@
 
 ####### cPouta Network Configuration #######
 
-- include: cpouta-management-network.yml
-- include: cpouta-admin-network.yml
-- include: cpouta-ceph-network.yml
+- include: cpouta-network.yml
 
 ####### ePouta Network Configuration #######
 

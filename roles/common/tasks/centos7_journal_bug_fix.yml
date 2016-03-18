@@ -4,7 +4,7 @@
   register: systemd_version
 
 - name: Copy systemd-219 journal patch script
-  copy: src=roles/common/templates/systemd_journal_patch.py dest=/tmp/systemd_journal_patch.py owner=root group=root mode=0744
+  copy: src=systemd_journal_patch.py dest=/tmp/systemd_journal_patch.py owner=root group=root mode=0744
   when: systemd_version.rc == 0
 
 - name: Executing journal patch script

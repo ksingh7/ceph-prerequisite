@@ -1,13 +1,9 @@
 [all:vars]
 # Do Not Change This
 project=cpouta
+opsview_gearman_proxy_host=193.167.254.68
 
 bonded_interface=bond0
-
-# To configure network interfaces ,valid options are 'true' or 'false'
-configure_management_network=true
-configure_admin_network=true
-configure_ceph_network=true
 
 # If you have different type of server hardware, segregate them with these variables and define hosts in below host groups.
 
@@ -20,7 +16,14 @@ public_network_vlan_tag=1002
 # valid options are 'manual' or 'spacewalk' 
 configure_yum_repos = manual 
 
-[common]
+[common:children]
+mon_nodes
+osd_nodes
+
+[mon_nodes]
+ceph-mon[1:3]
+
+[osd_nodes]
 pouta-s0[1:4]
 ceph-c1s[1:3]
 ceph-c2s[1:3]
@@ -30,5 +33,20 @@ ceph-c4s1
 ceph-c4t2
 ceph-c4s3
 ceph-s[5:9]
-ceph-mon[1:3]
 
+[collectd_ceph_plugin_node]
+pouta-s01
+
+[dell_servers]
+ceph-mon[1:3]
+ceph-s[5:9]
+
+[hp_servers]
+pouta-s0[1:4]
+ceph-c1s[1:3]
+ceph-c2s[1:3]
+ceph-c3s[2:3]
+ceph-c3t1
+ceph-c4s1
+ceph-c4t2
+ceph-c4s3

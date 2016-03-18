@@ -1,0 +1,3 @@
+---
+- include: playbooks/hp_firmware_upgrade.yml
+- include: playbooks/dell_firmware_upgrade.yml

@@ -3,3 +3,9 @@
 - src: https://github.com/willshersystems/ansible-sshd
   path: roles
   name: ansible-role-sshd
+- src: https://github.com/CSC-IT-Center-for-Science/ansible-role-hp-firmware-upgrade
+  path: roles
+  name: hp-firmware-upgrade
+- src: https://github.com/CSC-IT-Center-for-Science/ansible-role-dell-firmware-upgrade
+  path: roles
+  name: dell-firmware-upgrade
