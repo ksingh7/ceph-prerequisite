@@ -36,3 +36,17 @@ ceph-s[5:9]
 
 [collectd_ceph_plugin_node]
 pouta-s01
+
+[dell_servers]
+ceph-mon[1:3]
+ceph-s[5:9]
+
+[hp_servers]
+pouta-s0[1:4]
+ceph-c1s[1:3]
+ceph-c2s[1:3]
+ceph-c3s[2:3]
+ceph-c3t1
+ceph-c4s1
+ceph-c4t2
+ceph-c4s3
