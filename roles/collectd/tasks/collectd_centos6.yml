@@ -5,7 +5,7 @@
 - file: path=/tmp/collectd_packages state=directory mode=0755
 
 - name: Copying collectd packages
-  copy: src=roles/collectd/templates/{{ item }} dest=/tmp/collectd_packages
+  copy: src={{ item }} dest=/tmp/collectd_packages
   with_items:
    - collectd-5.5.0-4.el6.csc.x86_64.rpm
    - collectd-disk-5.5.0-4.el6.csc.x86_64.rpm

@@ -22,10 +22,10 @@
   ignore_errors: true
 
 - name: Copying opsview cpu check
-  copy: src=roles/opsview/templates/check_cpu.sh dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
+  copy: src=check_cpu.sh dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
 
 - name: Copying opsview ceph health check
-  copy: src=roles/opsview/templates/check_ceph_health dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
+  copy: src=check_ceph_health dest=/usr/local/nagios/libexec mode=744 owner=nagios group=nagios
 
 - name: Adding cpu check to nrpe configuration
   shell: echo "command[check_cpu]=/usr/local/nagios/libexec/check_cpu.sh" >> /usr/local/nagios/etc/nrpe.cfg
@@ -56,7 +56,7 @@
   when: ansible_distribution_major_version == '6' and iptables.changed
 
 - name: Copying firewalld service file 
-  copy: src=roles/opsview/templates/opsview.xml dest=/etc/firewalld/services mode=640 
+  copy: src=opsview.xml dest=/etc/firewalld/services mode=640
   when: ansible_distribution_major_version == '7'
 
 - name: Applying firewalld service
